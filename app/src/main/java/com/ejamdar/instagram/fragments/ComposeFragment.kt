@@ -41,7 +41,7 @@ class ComposeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ivImage = view.findViewById(R.id.postImageField)
+        ivImage = view.findViewById(R.id.photoPostView)
         //set onClickListener and handle logic
         //button to send and save post
         view.findViewById<Button>(R.id.postButton).setOnClickListener{
@@ -81,7 +81,7 @@ class ComposeFragment : Fragment() {
                 Log.i(MainActivity.TAG, "Successful post creation")
                 Toast.makeText(requireContext(),"Post successfully made", Toast.LENGTH_SHORT).show()
                 val textField = view?.findViewById<EditText>(R.id.descriptionTextField)?.setText("")
-                val imageField = view?.findViewById<ImageView>(R.id.postImageField)
+                val imageField = view?.findViewById<ImageView>(R.id.photoPostView)
                     ?.setImageResource(0)
             }
         }
