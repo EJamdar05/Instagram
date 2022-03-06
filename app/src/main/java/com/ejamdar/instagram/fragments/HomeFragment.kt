@@ -17,7 +17,7 @@ import com.parse.ParseException
 import com.parse.ParseQuery
 
 
-class HomeFragment : Fragment() {
+open class HomeFragment : Fragment() {
 
     lateinit var postRecyclerView : RecyclerView
     lateinit var adapterView : PostAdapter
@@ -69,4 +69,5 @@ class HomeFragment : Fragment() {
     }
 
 
+    open fun querryPosts() {}
 }

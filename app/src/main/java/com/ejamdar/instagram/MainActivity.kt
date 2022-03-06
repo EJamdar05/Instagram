@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.ejamdar.instagram.fragments.ComposeFragment
 import com.ejamdar.instagram.fragments.HomeFragment
+import com.ejamdar.instagram.fragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.parse.*
 import java.io.File
@@ -43,13 +44,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_home -> {
                     //navigate to home screen
                     fragment = HomeFragment()
-                    Toast.makeText(this,"Home", Toast.LENGTH_SHORT).show()
                 }
                 R.id.action_compose ->{
                     fragment = ComposeFragment()
                 }
                 R.id.action_profile ->{
-                    Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show()
+                    fragment = ProfileFragment()
                 }
             }
 
