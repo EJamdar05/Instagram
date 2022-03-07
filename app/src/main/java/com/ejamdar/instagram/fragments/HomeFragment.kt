@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.ejamdar.instagram.MainActivity
 import com.ejamdar.instagram.PostAdapter
 import com.ejamdar.instagram.PostClass
@@ -22,6 +23,8 @@ open class HomeFragment : Fragment() {
     lateinit var postRecyclerView : RecyclerView
     lateinit var adapterView : PostAdapter
     var allPosts: MutableList<PostClass> = mutableListOf()
+    lateinit var swipeContainer: SwipeRefreshLayout
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +34,31 @@ open class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    fun clear() {
+        allPosts.clear()
+        adapterView.notifyDataSetChanged()
+    }
+
+    fun addAll(instaPost: List<PostClass>) {
+        allPosts.addAll(instaPost)
+        adapterView.notifyDataSetChanged()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        swipeContainer = view.findViewById(R.id.swipeContainer)
+        swipeContainer.setOnRefreshListener {
+            // Your code to refresh the list here.
+            // Make sure you call swipeContainer.setRefreshing(false)
+            // once the network request has completed successfully.
+            swipeContainer.setRefreshing(false)
+
+        }
+
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+            android.R.color.holo_green_light,
+            android.R.color.holo_orange_light,
+            android.R.color.holo_red_light);
 
         //set up views
         postRecyclerView = view.findViewById<RecyclerView>(R.id.postRecycleView)
@@ -41,6 +67,8 @@ open class HomeFragment : Fragment() {
         postRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         queryPosts()
     }
+
+
     private fun queryPosts() {
         val query: ParseQuery<PostClass> = ParseQuery.getQuery(PostClass::class.java)
         query.include(PostClass.KEY_USR)
@@ -63,6 +91,8 @@ open class HomeFragment : Fragment() {
 
         })
     }
+
+
 
     companion object{
         var TAG = "HomeFrag"
