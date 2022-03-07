@@ -1,37 +1,37 @@
 # Project 3 - Instagram Parser App (Not Actual Instagram)
 
-Instagram parser app is a photo sharing app similar to Instagram but using Parse as its backend.
+Instagram Parser App is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: 6 hours spent in total
+Time spent: 4 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [✔️] User can sign up to create a new account using Parse authentication.
-- [✔️] User can log in and log out of his or her account.
-- [✔️] The current signed in user is persisted across app restarts.
-- [✔️] User can take a photo, add a caption, and post it to "Instagram".
+- [✔️] User can view the last 20 posts submitted to "Instagram".
+- [✔️] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
+- [✔️] User can pull to refresh the last 20 posts submitted to "Instagram".
 
-The following **optional** features are implemented:
+The following **optional** features are implemented: None
 
-- [✔️] User sees app icon in home screen and styled bottom navigation view
-- [❌] Style the feed to look like the real Instagram feed.
-- [❌] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
+
+The following **additional** features are implemented:
+
+- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/LaiGk6C.gif' title='Sign In' width='' alt='Sign In' />
-<img src='https://i.imgur.com/ow0icrU.gif' title='Making a Post' width='' alt='Making a Post' />
-<img src='https://i.imgur.com/KDUunXO.gif' title='Adding New User' width='' alt='Adding New User' />
-<img src='https://i.imgur.com/jpjR1jG.gif' title='User Stays Signed In' width='' alt='User Stays Signed In' />
+<img src='https://i.imgur.com/Q5vA5v8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Addin  g the app icon gave me an issue with duplicate files and that was an issue that I spent close to an hour having to fix.
+Describe any challenges encountered while building the app.
+
+I couldn't implement any features that I wanted to due time constraints.
 
 ## Open-source libraries used
 
